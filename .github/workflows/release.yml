@@ -19,7 +19,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    environment: npm production
     steps:
     - uses: actions/checkout@v3
       with:
@@ -37,11 +37,11 @@ jobs:
       run: |
         jupyter execute Convert.ipynb
     - run: |
-        version=$(jq -r '.version' package.json)-build.${{  github.run_number }}-${{  github.run_attempt }}
+        version=$(jq -r '.version' package.json)-build+${{  github.run_number }}.${{  github.run_attempt }}
         echo "version: $version"
         npm pkg set version=$version
         # Lets package the module
-        npm pack
-        # npm publish
+        # npm pack
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
