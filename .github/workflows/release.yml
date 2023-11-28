@@ -10,6 +10,7 @@ on:
     paths: 
       - catCFDI_V_4_16112023.xls
       - Convert.ipynb
+      - .github/workflows/release.yml
 
 # permissions:
 #   contents: read
