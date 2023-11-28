@@ -11,8 +11,8 @@ on:
     # Lets run it every 24 hours
     - cron:  '0 0 * * *'
 
-# permissions:
-#   contents: read
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -55,7 +55,7 @@ jobs:
             exit 0
           fi
 
-          git config --global user.email "
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
           git checkout -b update-xls
           git add .
@@ -66,3 +66,5 @@ jobs:
           gh pr create --title "Update xls" --body "Update xls" --base main --head update-xls --assignee okvic77 --label satupdate
 
         fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
