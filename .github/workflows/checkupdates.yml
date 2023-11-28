@@ -4,7 +4,7 @@
 name: Check new xls version
 
 on:
-  push:
+  # push:
     # branches:
     #   - main
   schedule:
