@@ -40,7 +40,6 @@ jobs:
         jupyter execute Download.ipynb
     - name: If there are changes, create a PR
       run: |
-        echo "debug" > debug.txt
         if [ -n "$(git status --porcelain)" ]; then
 
           # Lets check for any PR with the label satupdate
