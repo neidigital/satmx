@@ -41,11 +41,18 @@ jobs:
         node-version: '20.x'
         registry-url: 'https://registry.npmjs.org'
     - run: |
-        version=$(jq -r '.version' package.json)-build+${{  github.run_number }}.${{  github.run_attempt }}
-        echo "version: $version"
-        npm pkg set version=$version
+        # version=$(jq -r '.version' package.json)-build+${{  github.run_number }}.${{  github.run_attempt }}
+        # echo "version: $version"
+        # npm pkg set version=$version
         # Lets package the module
         # npm pack
+        npm version prerelease
+
         npm publish --access public
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+        git commit -a -m "Update version [skip ci]"
+
+
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
