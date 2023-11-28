@@ -15,7 +15,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
-  
+
 
 jobs:
   build:
@@ -64,7 +64,7 @@ jobs:
           git checkout -b update-xls
           git add .
           git commit -m "Update xls"
-          git push origin update-xls
+          git push origin update-xls --force
           # Assign to okvic77
           # Create the tag satupdate
           gh pr create --title "Update xls" --body "Update xls" --base main --head update-xls --assignee okvic77 --label satupdate
