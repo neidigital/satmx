@@ -1,6 +1,6 @@
 {
   "name": "@neidigital/satmx",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "SAT JSON info",
   "main": "index.js",
   "type": "module",
