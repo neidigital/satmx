@@ -5,12 +5,8 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
-    paths: 
-      - catCFDI_V_4_16112023.xls
-      - Convert.ipynb
-      - .github/workflows/release.yml
+    tags:
+      - v*
 
 # permissions:
 #   contents: read
@@ -41,11 +37,6 @@ jobs:
         node-version: '20.x'
         registry-url: 'https://registry.npmjs.org'
     - run: |
-        # version=$(jq -r '.version' package.json)-build+${{  github.run_number }}.${{  github.run_attempt }}
-        # echo "version: $version"
-        # npm pkg set version=$version
-        # Lets package the module
-        # npm pack
         npm version prerelease
 
         npm publish --access public
