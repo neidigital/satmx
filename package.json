@@ -1,0 +1,23 @@
+{
+  "name": "@neidigital/satmx",
+  "version": "0.0.1",
+  "description": "SAT JSON info",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neidigital/satmx.git"
+  },
+  "keywords": [
+    "satmx"
+  ],
+  "author": "neidigital",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neidigital/satmx/issues"
+  },
+  "homepage": "https://github.com/neidigital/satmx#readme"
+}

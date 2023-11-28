@@ -35,3 +35,12 @@ jobs:
     - name: Run the notebook
       run: |
         jupyter execute Convert.ipynb
+    - run: |
+        version=$(jq -r '.version' package.json)-build.${{  github.run_number }}-${{  github.run_attempt }}
+        echo "version: $version"
+        npm pkg set-version $version
+        # Lets package the module
+        npm pack
+        # npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
