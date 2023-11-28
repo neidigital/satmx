@@ -5,8 +5,8 @@ name: Check new xls version
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
   schedule:
     # Lets run it every 24 hours
     - cron:  '0 0 * * *'
